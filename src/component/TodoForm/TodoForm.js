@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { useState } from 'react';
+import styles from './TodoForm.module.css';
 
 function TodoForm(props) {
   const [input, setInput] = useState(props.edit ? props.edit.text : '');
@@ -25,7 +26,7 @@ function TodoForm(props) {
   };
 
   return (
-    <form onSubmit={submitHandler}>
+    <form onSubmit={submitHandler} className={styles.formControl}>
       <input
         type="text"
         value={input}

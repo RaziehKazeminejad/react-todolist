@@ -9,33 +9,12 @@
 .App h1{
   margin-bottom: 30px;
 }
-.container{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 40rem;
-  background-color: #fff;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  padding: 10px;
-}
-.todo{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 20rem;
-  margin: 10px 0;
-}
-.completed{
-  text-decoration: line-through;
-  color: #d668e9;
-}
 input{
   border: 1px solid #ccc;
   border-radius: 5px;
   padding: 5px;
   outline: none;
-  margin-top: 10px;
+  width: 200px;
 }
 input:focus{
   border: 2px solid blueviolet;
@@ -44,7 +23,9 @@ button{
   border-radius: 5px;
   margin-left: 2px;
   padding: 5px 10px;
+  cursor: pointer;
   background-color: #d97be9;
   color: #fff;
   border: none;
+  border: 1px solid #d97be9;
 }

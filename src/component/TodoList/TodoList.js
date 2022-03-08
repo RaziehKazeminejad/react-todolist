@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import Todo from './Todo';
-import TodoForm from './TodoForm';
+import Todo from '../Todo/Todo';
+import TodoForm from '../TodoForm/TodoForm';
 
 function TodoList({ todos, onComplete, onDelete, onUpdateTodo }) {
   const [edit, setEdit] = useState({ id: null, text: '', isCompleted: false });
