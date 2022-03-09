@@ -7,30 +7,25 @@ function TodoList({ todos, onComplete, onDelete, onUpdateTodo }) {
 
   const editTodoHandler = (newValue) => {
     onUpdateTodo(edit.id, newValue);
-    setEdit({id:null, text:''})
+    setEdit({ id: null, text: '' });
   };
 
-  const renderTodos = () => {
-    if (todos.length === 0) return <p>add some todos</p>;
-
-    return todos.map((todo) => {
-      return (
-        <Todo
-          key={todo.id}
-          todo={todo}
-          onComplete={() => onComplete(todo.id)}
-          onDelete={() => onDelete(todo.id)}
-          onEdit={() => setEdit(todo)}
-        />
-      );
-    });
-  };
   return (
     <div>
       {edit.id ? (
         <TodoForm submitTodo={editTodoHandler} edit={edit} />
       ) : (
-        renderTodos()
+        todos.map((todo) => {
+          return (
+            <Todo
+              key={todo.id}
+              todo={todo}
+              onComplete={() => onComplete(todo.id)}
+              onDelete={() => onDelete(todo.id)}
+              onEdit={() => setEdit(todo)}
+            />
+          );
+        })
       )}
     </div>
   );
