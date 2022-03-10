@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Todo from '../Todo/Todo';
 import TodoForm from '../TodoForm/TodoForm';
+import styles from './TodoList.module.css';
 
 function TodoList({ todos, onComplete, onDelete, onUpdateTodo }) {
   const [edit, setEdit] = useState({ id: null, text: '', isCompleted: false });
@@ -13,7 +14,9 @@ function TodoList({ todos, onComplete, onDelete, onUpdateTodo }) {
   return (
     <div>
       {edit.id ? (
-        <TodoForm submitTodo={editTodoHandler} edit={edit} />
+        <div className={styles.container}>
+          <TodoForm submitTodo={editTodoHandler} edit={edit} />
+        </div>
       ) : (
         todos.map((todo) => {
           return (

@@ -63,7 +63,9 @@ function TodoApp() {
   };
   return (
     <div className={styles.container}>
-      <TodoForm submitTodo={addTodoHandler} />
+      <div className={styles.todoform}>
+        <TodoForm submitTodo={addTodoHandler} />
+      </div>
       <NavBar
         unCompletedTodo={todos.filter((todo) => !todo.isCompleted).length}
         status={status}

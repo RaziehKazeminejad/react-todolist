@@ -3,7 +3,19 @@ import styles from './NavBar.module.css';
 
 export default function NavBar({ unCompletedTodo, status, onSelect }) {
   return (
-    <div>
+    <div className={styles.container}>
+      <div>
+        {unCompletedTodo ? (
+          <div>
+            <h2>{unCompletedTodo} | task pendding!</h2>
+          </div>
+        ) : (
+          <div>
+            <h2>Tasks</h2>
+          </div>
+        )}
+      </div>
+
       <div className={styles.select}>
         <select onChange={onSelect} value={status}>
           <option value="All">All</option>
@@ -11,19 +23,6 @@ export default function NavBar({ unCompletedTodo, status, onSelect }) {
           <option value="unCompleted">unCompleted</option>
         </select>
       </div>
-      <div className={styles.header}>
-          {unCompletedTodo ? (
-        <>
-          <span>{unCompletedTodo}</span>
-          <h2>task pendding!</h2>
-        </>
-      ) : (
-        <>
-          <h2>Set your today todos!</h2>
-        </>
-      )}
-      </div>
-      
     </div>
   );
 }
